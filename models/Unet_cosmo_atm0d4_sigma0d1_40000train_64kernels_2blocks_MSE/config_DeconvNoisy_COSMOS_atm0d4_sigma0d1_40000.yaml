@@ -1,0 +1,99 @@
+# configuration file for UNet training
+# version >= 16 Dec 25
+# train/test: "On the fly conv+noise"
+
+###
+### Simulator parameters
+###
+# final image size H,W
+"fov_pixels": 48
+# obs pixel_scale
+"pixel_scale": 0.03
+# Up sampling
+"upsample": 4
+
+#new default >= 16/12/25
+"atmos_fwhm": 0.4
+
+"atmos_e": 0.01 
+"sigma_defocus": 0.10
+"sigma_opt_psf": 0.07
+"min_shear": 0.01
+"max_shear": 0.05
+"opt_obs_min" : 0.1
+"opt_obs_width" : 0.4
+"lam_ov_d_min" : 0.017
+"lam_ov_d_width" : 0.007
+#nb. img is normalized in (-1,1)
+
+#new default 1.0 >= 11/12/25
+"sigma_noise_max": 0.1
+
+###
+### Unet architecture
+###
+# For 48x48 grayscale images
+# test with 2 blocks & 64 kernels, may be try 3 blocks
+#
+"archi": "Unet-Full"
+"pool_window": 2
+"num_blocks": 2
+"num_kernels": 64
+"num_channels": 1
+"kernel_size": 3
+"padding": 1
+"bias": true
+"num_enc_conv": 2
+"num_mid_conv": 2
+"num_dec_conv": 2
+
+###
+### datasets
+###
+dataset_type: "23.5"
+#input_data_dir: "/lustre/fsn1/projects/rech/ixh/ufd72rp/"
+#input_dataset: "/COSMOS_23.5_dataset/"
+input_data_dir: "/lustre/fswork/projects/rech/ixh/ufd72rp/deconv_noisyconv/"
+input_gal_file_list: "list_gal_files_48pix.json"
+n_train: 40000
+n_val: 5000
+
+
+### output
+###
+"out_root_dir": "/lustre/fswork/projects/rech/ixh/ufd72rp/deconv_noisyconv/"
+"run_tag": "Unet_cosmo_atm0d4_sigma0d1"
+
+###
+### running
+###
+#seed [X*]DDMMAAAA
+"seed": 221122025
+"num_workers": 10
+"use_scheduler": true
+"scheduler": "reduce"
+"resume": false
+"resume_optimizer": false
+"resume_scheduler": false
+"checkpoint_file" : "/Unet-Full_last_state.pth"
+"history_loss_cpt_file" : "/Unet-Full_last_history.npy"
+
+###
+### optimization
+###
+# Loss= MSE, L1, MultiScale
+loss: "MSE"
+# in case of MultiScale Loss, set the norm ("L1" vs "L2"=MSE) and scale_max
+multScale_norm: "L2"
+multiscale_scale: 3
+
+"lr_init": 1.0e-2
+#bs was 250 for 128x128 and n_blocks=3
+"batch_size": 40
+"test_batch_size": 40
+"num_epochs": 100
+"start_epoch": 0
+
+# for "reduce" scheduler
+"patience": 5
+"lr_decay": 0.5
