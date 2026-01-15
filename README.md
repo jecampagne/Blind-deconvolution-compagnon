@@ -1,6 +1,8 @@
 # Blind Deconvolution in Astronomy: How Does a Standalone U-Net Perform?
 This is the  repository associated to the article [on arxiv](https://arxiv.org/abs/2601.08666).
 
+[![arXiv](https://img.shields.io/badge/arXiv-2601.08666-B31B1B.svg)](https://arxiv.org/abs/2601.08666)
+
 We trained a U-Net on galaxy COSMOS images corrupted by genrated PSF (optical and atmospheric) convolution, and
 then tested for standalone blind deconvolution. U-Net performed quite well even under challenging conditions. 
 
