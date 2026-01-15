@@ -1,7 +1,19 @@
 # Blind Deconvolution in Astronomy: How Does a Standalone U-Net Perform?
 This is the  repository associated to the article [on arxiv](https://arxiv.org/abs/2601.08666)
 
-![test](figs/exemple1_deonv.png)
+We trained a U-Net on galaxy COSMOS images corrupted by genrated PSF (optical and atmospheric) convolution, and
+then tested for standalone blind deconvolution. U-Net performed quite well even under challenging conditions. 
+
+![exemple of blind deconvolution by U-Net](figs/exemple1_deonv.png)
+
+Evidence using $C^\alpha$ images of known backgrounds and contours regularities suggests U-Net learns a geometry-adaptive harmonic basis.
+
+![firest 2à eigenvectors](figs/calpha_Vecprop_fwhm10.png)
+
+aligning with recent mathematical insights on denoising task by [Z. Kadkhodaie et al. (2024)(https://openreview.net/forum?id=ANvmVS2Yr0).
+
+
+
 
 # External Materials
 
