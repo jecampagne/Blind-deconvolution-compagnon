@@ -8,7 +8,9 @@ then tested for standalone blind deconvolution. U-Net performed quite well even 
 
 Evidence using $C^\alpha$ images of known backgrounds and contours regularities suggests U-Net learns a geometry-adaptive harmonic basis.
 
-![firest 2à eigenvectors](figs/calpha_Vecprop_fwhm10.png)
+|:--:|
+| ![blind deconvolution of a C^5 image](figs/calpha_blur_noisy_deconv_imgs.png) |
+| ![firest 20 eigenvectors](figs/calpha_Vecprop_fwhm10.png) |
 
 aligning with recent mathematical insights on denoising task by [Z. Kadkhodaie et al. (2024)(https://openreview.net/forum?id=ANvmVS2Yr0).
 
