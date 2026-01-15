@@ -1,7 +1,16 @@
 # Blind Deconvolution in Astronomy: How Does a Standalone U-Net Perform?
 This is the  repository associated to the article [on arxiv](https://arxiv.org/abs/2601.08666)
 
-The repository is still in developments.
+
+# External Materials
+
+To use notebooks related to $C^\alpha$ images the train models are located in [this repository](
+https://sdrive.cnrs.fr/s/wmo7cmJKsQe8oTo)
+
+The COSMOS Real Galaxy
+Dataset, used for training and validation, is available
+on Zenodo [here](https://zenodo.org/records/3242143). 
+
 
 # Cite
 ```
