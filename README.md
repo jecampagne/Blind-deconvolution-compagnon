@@ -6,6 +6,9 @@ then tested for standalone blind deconvolution. U-Net performed quite well even 
 
 ![exemple of blind deconvolution by U-Net](figs/exemple1_deonv.png)
 
+The U-Net performances are conditionend notably by the number of training images.
+![SSIM U-Net vs SSIM of clean images][figs/ssim_unet_vs_ssim_obs_ntrain.png]
+
 Evidence using $C^\alpha$ images of known backgrounds and contours regularities suggests U-Net learns a geometry-adaptive harmonic basis.
 
 |:--:|
