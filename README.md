@@ -1,21 +1,30 @@
 # Blind Deconvolution in Astronomy: How Does a Standalone U-Net Perform?
-This is the  repository associated to the article [on arxiv](https://arxiv.org/abs/2601.08666)
+This is the  repository associated to the article [on arxiv](https://arxiv.org/abs/2601.08666).
 
 We trained a U-Net on galaxy COSMOS images corrupted by genrated PSF (optical and atmospheric) convolution, and
 then tested for standalone blind deconvolution. U-Net performed quite well even under challenging conditions. 
 
-![exemple of blind deconvolution by U-Net](figs/exemple1_deonv.png)
+<p align="center">
+       <img src="figs/exemple1_deonv.png" alt="exemple of blind deconvolution by U-Net" width="90%"/>
+</p>
+     
+The U-Net performances are conditionend notably by the number of training images as shown below using the SSIM metrics.
 
-The U-Net performances are conditionend notably by the number of training images.
-![SSIM U-Net vs SSIM of clean images][figs/ssim_unet_vs_ssim_obs_ntrain.png]
+<p align="center">
+      <img src="figs/ssim_unet_vs_ssim_obs_ntrain.png" alt="SSIM U-Net vs SSIM of clean images" width="50%"/>
+</p>
 
-Evidence using $C^\alpha$ images of known backgrounds and contours regularities suggests U-Net learns a geometry-adaptive harmonic basis.
+Evidence using $C^\alpha$ images of known backgrounds and contours regularities suggests U-Net learns a geometry-adaptive harmonic basis and performs a thresholding using sparsity.
 
-|:--:|
-| ![blind deconvolution of a C^5 image](figs/calpha_blur_noisy_deconv_imgs.png) |
-| ![firest 20 eigenvectors](figs/calpha_Vecprop_fwhm10.png) |
+<p align="center">
+  <img src="figs/calpha_blur_noisy_deconv_imgs.png" alt="Blind deconvolution of a Cα image" width="50%"/>
+</p>
+<p align="center">
+  <img src="figs/calpha_Vecprop_fwhm10.png" alt="First 20 eigenvectors" width="80%"/>
+</p>
 
-aligning with recent mathematical insights on denoising task by [Z. Kadkhodaie et al. (2024)(https://openreview.net/forum?id=ANvmVS2Yr0).
+
+Aligning with recent mathematical insights on denoising task by [Z. Kadkhodaie et al. (2024)](https://openreview.net/forum?id=ANvmVS2Yr0).
 
 
 
