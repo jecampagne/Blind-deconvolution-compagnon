@@ -1,6 +1,7 @@
 # Blind Deconvolution in Astronomy: How Does a Standalone U-Net Perform?
 This is the  repository associated to the article [on arxiv](https://arxiv.org/abs/2601.08666)
 
+![test](figs/exemple1_deonv.png)
 
 # External Materials
 
